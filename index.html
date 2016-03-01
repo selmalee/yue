@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>明天约什么</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body onselectstart="return false;">
+	<div class="frame" id="f0">
+		<img src="title.png" id="title"/>
+		<input type="button" id="start" value="开始" onclick="change(this,frames[0],frames[1])"/>
+	</div>
+	<div class="frame" id="f1">
+		<h4>你想什么时候开始约？</h4>
+		<p id="f1_a" onclick="change(this,frames[1],frames[2])">★早上开始</p>
+		<p id="f1_b" onclick="change(this,frames[1],frames[3])">★中午开始</p>
+		<p id="f1_c" onclick="change(this,frames[1],frames[4])">★下午开始</p>
+		<p id="f1_d" onclick="change(this,frames[1],frames[5])">★晚上开始</p>
+	</div>
+	<div class="frame" id="f2">
+		<h4>早上去哪玩？</h4>
+		<p id="f2_a" onclick="change(this,frames[2],frames[3])">★去大夫山爬山</p>
+		<p id="f2_b" onclick="change(this,frames[2],frames[3])">★去大夫山踩单车</p>
+		<p id="f2_c" onclick="change(this,frames[2],frames[3])">★来石楼莲花山</p>
+	</div>
+	<div class="frame" id="f3">
+		<h4>中午次什么？</h4>
+		<p id="f3_a" onclick="change(this,frames[3],frames[4])">★大夫山附近的</p>
+		<p id="f3_b" onclick="change(this,frames[3],frames[4])">★百越广场/易发周边</p>
+		<p id="f3_c" onclick="change(this,frames[3],frames[4])">★老地方奥园广场</p>
+		<p id="f3_d" onclick="change(this,frames[3],frames[4])">★石楼有间一方渔村</p>
+		<p id="f3_e" onclick="change(this,frames[3],frames[4])">★想到挞哥没有想到的，待会在讨论组里说</p>
+	</div>
+	<div class="frame" id="f4">
+		<h4>下午玩什么？</h4>
+		<p id="f4_a" onclick="change(this,frames[4],frames[5])">★看电影（奥园广场/荔园新天地等）</p>
+		<p id="f4_b" onclick="change(this,frames[4],frames[5])">★逛街（奥园广场等）</p>
+		<p id="f4_c" onclick="change(this,frames[4],frames[5])">★唱k（易发周边有）</p>
+		<p id="f4_d" onclick="change(this,frames[4],frames[7])">★回家</p>
+		<p id="f4_e">★想到挞哥没有想到的，待会在讨论组里说</p>
+	</div>
+	<div class="frame" id="f5">
+		<h4>晚饭次什么？</h4>
+		<p id="f5_a" onclick="change(this,frames[5],frames[6])">★小白请我们吃四海一家</p>
+		<p id="f5_b" onclick="change(this,frames[5],frames[6])">★奥园广场周边</p>
+		<p id="f5_c" onclick="change(this,frames[5],frames[6])">★易发周边</p>
+		<p id="f5_d" onclick="change(this,frames[5],frames[7])">★回家</p>
+		<p id="f5_e" onclick="change(this,frames[5],frames[6])">★想到挞哥没有想到的，待会在讨论组里说</p>
+	</div>
+	<div class="frame" id="f6">
+		<h4>晚上还直落嘛？</h4>
+		<p id="f6_a" onclick="change(this,frames[6],frames[7])">★唱k</p>
+		<p id="f6_b" onclick="change(this,frames[6],frames[7])">★看电影</p>
+		<p id="f6_c" onclick="change(this,frames[6],frames[7])">★回家</p>
+	</div>
+	<div class="frame" id="f7">
+		<h4>你的最终选择是（看完截图发到讨论组吧）：</h4>
+		<p id="result"></p>
+		<div id="restart" onclick="change(this,frames[7],frames[0])">再一次</div>
+	</div>
+
+<script type="text/javascript">
+	var re = '';
+	var result = document.getElementById('result');
+	function change(ele, beforeP, afterP){
+		beforeP.style.display = "none";
+		afterP.style.display = "block";
+		re = re + ele.innerHTML;
+		result.innerHTML = re;
+	}
+	var frames = document.getElementsByTagName('div');
+</script>
+</body>
+</html>
